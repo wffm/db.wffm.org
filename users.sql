@@ -1,6 +1,7 @@
 create table users (
-       email character varying,
-       encrypted_password character varying DEFAULT ''::character varying,
+       id serial primary key,
+       email character varying unique,
+       encrypted_password character varying,
        reset_password_token character varying,
        reset_password_sent_at timestamp without time zone,
        remember_created_at timestamp without time zone,
@@ -13,5 +14,4 @@ create table users (
        vendor_id integer references vendors
 );
 
-alter table only users add constraint user_pkey primary key (email);
-create unique index index_users_on_email on users using btree (email);
+create index user_email on users(email);

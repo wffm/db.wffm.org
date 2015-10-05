@@ -1,5 +1,5 @@
 CREATE TABLE mailchimp_summaries (
-    id integer NOT NULL,
+    id serial PRIMARY KEY,
     opens integer,
     unique_opens integer,
     emails_sent integer,
@@ -22,17 +22,7 @@ CREATE TABLE mailchimp_summaries (
     send_time timestamp without TIME ZONE
 );
 
-CREATE SEQUENCE mailchimp_summaries_id_seq
-    START WITH 1
-    INCREMENT BY 1
-    NO MINVALUE
-    NO MAXVALUE
-    CACHE 1;
-
-ALTER SEQUENCE mailchimp_summaries_id_seq OWNED BY mailchimp_summaries.id;
-ALTER TABLE ONLY mailchimp_summaries ALTER COLUMN id SET DEFAULT nextval('mailchimp_summaries_id_seq'::regclass);
-
 CREATE TRIGGER mailchump_summaries_insert
     BEFORE INSERT ON mailchimp_summaries
     FOR EACH ROW
-    EXECUTE PROCEDURE on_record_insert('mailchimp_summaries_id_seq');
+    EXECUTE PROCEDURE on_record_insert();
