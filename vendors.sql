@@ -3,7 +3,7 @@
 --
 
 CREATE TABLE vendors (
-    id integer NOT NULL PRIMARY KEY,
+    id integer NOT NULL,
     name character varying,
     email character varying,
     address character varying,
@@ -30,6 +30,7 @@ CREATE SEQUENCE vendors_id_seq
 ALTER SEQUENCE vendors_id_seq OWNED BY vendors.id;
 
 ALTER TABLE ONLY vendors ALTER COLUMN id SET DEFAULT nextval('vendors_id_seq'::regclass);
+ALTER TABLE ONLY vendors ADD CONSTRAINT vendor_pkey PRIMARY KEY (id);
 
 CREATE UNIQUE INDEX index_vendors_on_email ON vendors USING btree (email);
 

@@ -16,3 +16,13 @@ CREATE SEQUENCE contacts_id_seq
 
 ALTER SEQUENCE contacts_id_seq OWNED BY contacts.id;
 ALTER TABLE ONLY contacts ALTER COLUMN id SET DEFAULT nextval('contacts_id_seq'::regclass);
+
+CREATE TRIGGER contacts_insert
+    BEFORE INSERT ON contacts
+    FOR EACH ROW
+    EXECUTE PROCEDURE on_record_insert('contacts_id_seq');
+
+CREATE TRIGGER contacts_update
+    BEFORE UPDATE ON contacts
+    FOR EACH ROW
+    EXECUTE PROCEDURE on_record_update();
