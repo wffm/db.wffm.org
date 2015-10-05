@@ -31,3 +31,8 @@ CREATE SEQUENCE mailchimp_summaries_id_seq
 
 ALTER SEQUENCE mailchimp_summaries_id_seq OWNED BY mailchimp_summaries.id;
 ALTER TABLE ONLY mailchimp_summaries ALTER COLUMN id SET DEFAULT nextval('mailchimp_summaries_id_seq'::regclass);
+
+CREATE TRIGGER mailchump_summaries_insert
+    BEFORE INSERT ON mailchimp_summaries
+    FOR EACH ROW
+    EXECUTE PROCEDURE on_record_insert('mailchimp_summaries_id_seq');
