@@ -3,7 +3,7 @@
 --
 
 CREATE TABLE vendors (
-    id integer NOT NULL,
+    id integer NOT NULL PRIMARY KEY,
     name character varying,
     email character varying,
     address character varying,
@@ -17,7 +17,7 @@ CREATE TABLE vendors (
     updated_at timestamp without time zone NOT NULL,
     is_new_application boolean default false,
     is_craft_vendor boolean default false,
-    dates_unavailable character varying,
+    dates_unavailable character varying
 );
 
 CREATE SEQUENCE vendors_id_seq
