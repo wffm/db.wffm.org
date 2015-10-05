@@ -29,9 +29,8 @@ CREATE SEQUENCE vendors_id_seq
 
 ALTER SEQUENCE vendors_id_seq OWNED BY vendors.id;
 
--- ALTER TABLE ONLY vendors ALTER COLUMN id SET DEFAULT nextval('vendors_id_seq'::regclass);
+ALTER TABLE ONLY vendors ALTER COLUMN id SET DEFAULT nextval('vendors_id_seq'::regclass);
 
-CREATE UNIQUE INDEX index_vendors_on_name ON vendors USING btree (name);
 CREATE UNIQUE INDEX index_vendors_on_email ON vendors USING btree (email);
 
 CREATE TRIGGER vendors_insert
