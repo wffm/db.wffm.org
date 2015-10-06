@@ -11,6 +11,7 @@ create table users (
        current_sign_in_ip character varying,
        last_sign_in_ip character varying,
        created_at timestamp without time zone not null,
+       access_token character varying unique,
        vendor_id integer references vendors(id)
 );
 
