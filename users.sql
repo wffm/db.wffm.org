@@ -10,9 +10,9 @@ create table users (
        last_sign_in_at timestamp without time zone,
        current_sign_in_ip character varying,
        last_sign_in_ip character varying,
-       created_at timestamp without time zone not null,
-       access_token character varying unique,
-       vendor_id integer references vendors(id)
+       created_at timestamp without time zone not null default current_timestamp,
+       api_key character varying unique,
+       vendor_id integer references vendors(id) not null
 );
 
 create index users_email on users(email);

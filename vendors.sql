@@ -13,7 +13,7 @@ CREATE TABLE vendors (
     phone2 character varying,
     active boolean DEFAULT false,
     created_at timestamp without time zone NOT NULL DEFAULT current_timestamp,
-    updated_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time ZONE NOT NULL,
     is_new_application boolean default false,
     is_craft_vendor boolean default false,
     dates_unavailable character varying

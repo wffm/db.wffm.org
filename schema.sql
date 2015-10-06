@@ -15,3 +15,7 @@ set search_path = wffm;
 \ir mailchimp.sql
 \ir logos.sql
 \ir socialnetworks.sql
+\ir scopes.sql
+
+-- fixtures
+\ir fixtures.sql
