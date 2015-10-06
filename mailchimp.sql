@@ -16,13 +16,8 @@ CREATE TABLE mailchimp_summaries (
     unopen_rate numeric(11,2),
     unsub_rate numeric(11,2),
     abuse_rate numeric(11,2),
-    created_at timestamp without time zone NOT NULL,
+    created_at timestamp without time zone NOT NULL default current_timestamp,
     c_id character varying,
     subject character varying,
     send_time timestamp without TIME ZONE
 );
-
-CREATE TRIGGER mailchump_summaries_insert
-    BEFORE INSERT ON mailchimp_summaries
-    FOR EACH ROW
-    EXECUTE PROCEDURE on_record_insert();
