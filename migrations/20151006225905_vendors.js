@@ -2,6 +2,7 @@
 
 var table = table => {
     table.increments().primary();
+    table.string("name");
     table.string('email');
     table.string('address');
     table.string('url');
