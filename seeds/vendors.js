@@ -1,4 +1,5 @@
 "use strict";
+var uuid = require("uuid");
 
 exports.seed = (knex, Promise) => {
     return Promise.join(
@@ -10,11 +11,11 @@ exports.seed = (knex, Promise) => {
             .insert({name: 'test vendor', email: "user1@testvendor.com"})
             .returning("id")
             .then((id) => {
-                console.log(id);
                 return knex('users').insert({
                     vendor_id: id.shift(),
                     email: 'seconduser@testvendor.com',
-                    password: 'heehaw'
+                    password: 'heehaw',
+                    api_key: uuid.v1()
                 })
             })
     );
