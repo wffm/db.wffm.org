@@ -1,0 +1,24 @@
+{
+  "name": "db.wffm.org",
+  "version": "1.0.0",
+  "description": "> postgresql db design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wffm/db.wffm.org.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wffm/db.wffm.org/issues"
+  },
+  "homepage": "https://github.com/wffm/db.wffm.org#readme",
+  "dependencies": {
+    "getconfig": "^2.1.0",
+    "knex": "^0.8.6",
+    "pg": "^4.4.2"
+  }
+}
