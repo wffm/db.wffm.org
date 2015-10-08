@@ -16,8 +16,9 @@ exports.seed = (knex, Promise) => {
                     vendor_id: id.shift(),
                     email: 'seconduser@testvendor.com',
                     password: bcrypt.hashSync('heehaw', 10),
-                    api_key: uuid.v1()
-                })
+                    api_key: uuid.v1(),
+                    scope_id: 1
+                });
             })
     );
 };

@@ -7,6 +7,7 @@ var table = table => {
     table.timestamp('current_sign_in_at');
     table.integer('vendor_id').references('vendors.id');
     table.uuid('api_key');
+    table.integer('scope_id').references('scopes.id');
     table.timestamps();
 }
 exports.up = function(knex, Promise) {
