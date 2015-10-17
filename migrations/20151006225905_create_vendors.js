@@ -3,12 +3,15 @@
 var table = table => {
     table.increments().primary();
     table.string("name");
+    table.string("person_name");
     table.string('email');
     table.string('address');
     table.string('url');
     table.string('bio');
     table.string('phone1');
     table.string('phone2');
+    table.string('sales_tax_id');
+    table.boolean('has_inspected_kitchen');
     table.boolean('active');
     table.timestamps();
     table.boolean('is_new_application');
