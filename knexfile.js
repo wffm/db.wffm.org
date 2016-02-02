@@ -5,8 +5,10 @@ module.exports = {
     client: 'postgresql',
     connection: {
         database: "market_api",
-        user: "adam",
-        password: "password"
+        user: "market_api",
+        password: "password",
+        host: "10.0.3.17",
+        port: 5432
     },
       pool: {
           min: 2,

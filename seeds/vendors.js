@@ -1,6 +1,6 @@
 "use strict";
-var uuid = require("uuid");
-var bcrypt = require("bcryptjs");
+const uuid = require("uuid");
+const bcrypt = require("bcryptjs");
 
 exports.seed = (knex, Promise) => {
     return Promise.join(
