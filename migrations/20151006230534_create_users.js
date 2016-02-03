@@ -5,10 +5,10 @@ var table = table => {
     table.integer('sign_in_count');
     table.timestamp('last_sign_in_at');
     table.timestamp('current_sign_in_at');
-    table.integer('vendor_id').references('vendors.id');
     table.uuid('api_key');
-    table.integer('scope_id').references('scopes.id');
     table.timestamps();
+    table.integer('scope_id').references('scopes.id');
+    table.integer('vendor_id').references('vendors.id');
 }
 exports.up = function(knex, Promise) {
     return knex.schema.createTable('users', table)

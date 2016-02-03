@@ -13,10 +13,10 @@ var table = table => {
     table.string('sales_tax_id');
     table.boolean('has_inspected_kitchen');
     table.boolean('active');
-    table.timestamps();
     table.boolean('is_new_application');
     table.boolean('is_craft_vendor');
     table.string('dates_unavailable');
+    table.timestamps();
 };
 
 exports.up = function(knex, Promise) {
