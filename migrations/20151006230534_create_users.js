@@ -1,3 +1,5 @@
+'use strict';
+
 var table = table => {
     table.increments().primary();
     table.string('email');
